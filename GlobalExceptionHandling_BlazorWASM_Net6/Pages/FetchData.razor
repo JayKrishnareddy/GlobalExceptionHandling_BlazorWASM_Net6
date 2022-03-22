@@ -41,6 +41,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        throw new IndexOutOfRangeException();
         forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
     }
 
