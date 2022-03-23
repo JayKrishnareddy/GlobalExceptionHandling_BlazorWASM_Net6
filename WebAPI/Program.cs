@@ -9,11 +9,18 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 #region Connection String
-builder.Services.AddDbContext<AppContext>(options =>
+//builder.Services.AddDbContext<LoggingAPIContext>(options =>
+//{
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("myconn"));
+//});
+builder.Services.AddDbContextFactory<LoggingAPIContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("myconn"));
 });
 #endregion
+
+builder.Services.AddSingleton<ILoggerProvider, ApplicationLoggerProvider>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,6 +29,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 
 app.UseHttpsRedirection();
 
