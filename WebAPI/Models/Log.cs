@@ -3,10 +3,10 @@
     public partial class Log
     {
         public int LogId { get; set; }
-        public string LogLevel { get; set; }
         public string Source { get; set; }
+        public string FilePath { get; set; }
+        public int LineNumber { get; set; }
         public string ExceptionMessage { get; set; }
-        public string StackTrace { get; set; }
-        public string CreatedDate { get; set; }
+        public DateTime CretedDate { get; set; }
     }
 }
