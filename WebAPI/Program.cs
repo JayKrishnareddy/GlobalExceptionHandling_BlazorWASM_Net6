@@ -8,17 +8,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 #region Connection String
-//builder.Services.AddDbContext<LoggingAPIContext>(options =>
-//{
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("myconn"));
-//});
-builder.Services.AddDbContextFactory<LoggingAPIContext>(options =>
+builder.Services.AddDbContext<LoggingAPIContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("myconn"));
 });
 #endregion
-
-builder.Services.AddSingleton<ILoggerProvider, ApplicationLoggerProvider>();
 
 var app = builder.Build();
 
@@ -36,7 +30,6 @@ app.UseAuthorization();
 
 //Added Custom Middleware
 
-app.UseAppException();
 
 app.MapControllers();
 
