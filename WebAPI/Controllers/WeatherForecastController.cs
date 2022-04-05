@@ -35,7 +35,7 @@ namespace WebAPI.Controllers
 
 
         /// <summary>
-        /// API to Log Exceptions in the Database.
+        /// API to Log Blazor Exceptions in the Database.
         /// </summary>
         /// <param name="log"></param>
         /// <returns></returns>
