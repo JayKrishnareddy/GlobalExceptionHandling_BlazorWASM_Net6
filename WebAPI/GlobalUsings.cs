@@ -5,4 +5,3 @@ global using System.Net;
 global using Microsoft.AspNetCore.Diagnostics;
 global using System.Diagnostics;
 global using Newtonsoft.Json;
-global using WebAPI.AppMIddleware;
