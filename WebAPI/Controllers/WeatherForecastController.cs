@@ -35,7 +35,7 @@ namespace WebAPI.Controllers
 
 
         /// <summary>
-        /// API to Log Exceptions in the Database.
+        /// API to Log Exceptions (Process Logs) in the Database.
         /// </summary>
         /// <param name="log"></param>
         /// <returns></returns>
